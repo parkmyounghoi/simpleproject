@@ -10,7 +10,5 @@
 <c:forEach items="${list}" var="aaDto">
 	${aaDto}<br/>
 </c:forEach>
-
-
 </body>
 </html>

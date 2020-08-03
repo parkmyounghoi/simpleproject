@@ -15,12 +15,17 @@
 	</h1>
 	<div class="jumbotron">
 		<P>  
-			The time on the server is ${serverTime}.<br/> 
+			<h1>aa 수정</h1> 
 			<a href="/simple01/aajoin">aajoinform</a><br/>
 			<a href="/simple01/aaselectall">aaselectall</a><br/>
 			<a href="/simple01/aaupdate">aaupdateform</a><br/>
-			<a href="/simple01/aadelete">aadelete</a><br/>
 		</P>
+	</div>
+	<div class="row">
+		<form action="aaupdate" method="post">
+			bb <input class="form-control" type="text" name="bb">
+			<input class="btn btn-primary" type="submit" value="저장"/>
+		</form>
 	</div>
 </div>
 </body>

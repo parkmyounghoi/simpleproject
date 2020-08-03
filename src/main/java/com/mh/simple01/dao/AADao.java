@@ -21,15 +21,18 @@ public class AADao {
 	@Autowired
 	SqlSession sqlSession;
 	
+	public void update(AADto dto) {
+		sqlSession.update("aa.updateaa",dto);
+		System.out.println("¼öÁ¤ µÊ.");
+	}
+	
 	public List<AADto> select() {
 		System.out.println("SELECT....");
 		List<AADto> list = sqlSession.selectList("aa.getaa");
-//		for(AADto aaDto : list) {
-//			System.out.println("aaDto = "+ aaDto.toString());
-//		}
 		return list;
 	}
-	public void insert() {
+	
+	public void insert(AADto dto) {
 		System.out.println("insert...");
 		
 		Connection conn = null;
@@ -40,7 +43,8 @@ public class AADao {
 			pstmt = conn.prepareStatement("insert into aa " + 
 									"(bb) " + 
 									"values " + 
-									"('thisss')");
+									"(?)");
+			pstmt.setString(1, dto.getBb());
 			pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
